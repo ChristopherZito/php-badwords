@@ -17,7 +17,6 @@
     
 </head>
 <body>
-    
     <?php 
 
         $x = "I'm sitting here in a boring room
@@ -27,17 +26,29 @@
         But nothing ever happens
         And I wonder";
 
-        $car = strlen($x);
+        $c = "***";
+        $fix = $_GET["cen"];
     ?>
     <section class="container">
-        <h1>
-            <?php echo $x?>
-            
-        </h1>
-        <h2>
-            Lunghezza strofa: <?php echo $car ?>
-        </h2>
+        <input id="text" type="text">
+        <p>
+            <?php echo $x ?>
+        </p>
+        <h3>
+            Lunghezza strofa: 
+            <?php echo strlen($x) ?>
+        </h3>
+        <p>
+            <?php
+                echo $fix . 
+                str_replace($_GET["cen"], "***", $x)
+
+            ?>
+        </p>
+        <h3>
+            Lunghezza nuova strofa:
+            <?php echo strlen(str_replace($_GET["cen"], "***", $x)) ?>
+        </h3>
     </section>
-    
 </body>
 </html>
